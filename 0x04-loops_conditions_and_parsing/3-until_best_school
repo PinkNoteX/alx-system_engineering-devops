@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# until task
+
+COUNT=10
+until [ $COUNT -lt 1 ]
+do
+	echo "Best School"
+	((COUNT--))
+done
