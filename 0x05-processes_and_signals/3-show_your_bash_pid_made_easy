@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#display all pid that contains bask word
+pgrep -l bash
