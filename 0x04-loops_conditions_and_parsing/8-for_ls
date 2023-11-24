@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#ls files without dash
+lsVar=$(ls)
+for x in $lsVar
+do
+	echo "$x" | cut -d'-' -f 2
+done
