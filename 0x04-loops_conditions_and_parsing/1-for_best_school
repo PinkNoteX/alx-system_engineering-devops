@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#print best school
+COUNT=10
+for _ in $(seq 1 $COUNT); do echo "Best School";done
