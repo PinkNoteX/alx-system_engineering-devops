@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# kill highlander
+PID=$(pgrep -f '7-highlander')
+kill "$PID"
