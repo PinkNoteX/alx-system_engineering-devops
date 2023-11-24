@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#task 6
+COUNT=1
+while [ $COUNT -ne 21 ]
+do
+	echo $COUNT
+	case "$COUNT" in
+		4)  echo "bad luck from China"
+	    		;;
+		9) echo "bad luck from Japan"
+	    		;;
+		17) echo "bad luck from Italy"
+	    		;;
+		esac
+	((COUNT++))
+done
