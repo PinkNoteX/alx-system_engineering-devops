@@ -3,15 +3,15 @@
 index=1
 while [ $index -ne 101 ]
 do
-	if [ $((index % 5)) -eq 0 ]
+	if [ $((index % 15)) -eq 0 ]
 	then
-		echo "Buzz"
+		echo "FizzBuzz"
 	elif [ $((index % 3)) -eq 0 ]
 	then
 		echo "Fizz"
-	elif [ $((index % 15)) -eq 0 ]
+	elif [ $((index % 5)) -eq 0 ]
 	then
-		echo "FizzBuzz"
+		echo "Buzz"
 	else
 		echo $index
 	fi
