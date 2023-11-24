@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #kill to infinity and beyond
-TPID = $(pgrep -f 4-to_infinity_and_beyond)
+TPID=$(pgrep -f '4-to_infinity_and_beyond')
 kill "$TPID"
