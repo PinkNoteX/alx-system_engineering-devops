@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #log in server with private key
-ssh -i ~/.ssh/school ubuntu@54.144.150.115
+ssh -i ~/.ssh/school ubuntu@54.160.94.125
