@@ -13,7 +13,7 @@ exec {'redirect_me':
 	provider => 'shell'
 }
 
-exec { 'nginx':
+exec { 'runner':
         command => 'service nginx start',
 	provider => 'shell',
 }
