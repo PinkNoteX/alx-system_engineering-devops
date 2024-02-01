@@ -3,15 +3,16 @@
 if [ $# -eq 0 ]; then
     exit
 fi
-Sites=("www" "lb-01" "web-01" "web-02")
-if [ "$2" ]
+doma () {
+dig "$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$1./$2/g" | awk -F" " ' NR==2 { print "The subdomain " $1 " is a " $4 " record and points to " $5 }'
+}
+
+if [ "$#" -eq 2 ]
 then
-    Sites=("$2")
+    doma "$2.$1" "$2"
+else
+    doma "www.$1" "www"
+    doma "lb-01.$1" "lb-01"
+    doma "web-01.$1" "web-01"
+    doma "web-02.$1" "web-02"
 fi
-for i in "${Sites[@]}"
-do
-    f="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
-    s="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
-    t="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
-    echo "The subdomain $f is a $s record and points to $t"
-done
