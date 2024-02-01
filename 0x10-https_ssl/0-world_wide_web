@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Configuring domain zone so that the subdomain www points to lb
+if [ $# -eq 0 ]; then
+    exit
+fi
+Sites=("www" "lb-01" "web-01" "web-02")
+if [ "$2" ]
+then
+    Sites=("$2")
+fi
+for i in "${Sites[@]}"
+do
+    f="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
+    s="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
+    t="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
+    echo "The subdomain $f is a $s record and points to $t"
+done
