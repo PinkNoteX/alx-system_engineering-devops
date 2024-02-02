@@ -11,6 +11,6 @@ echo "listen load_balancer
    balance roundrobin
    option httpclose
    option forwardfor
-   server 474016-web-01 100.26.174.136:80 check
-   server 474016-web-02 18.206.233.110:80 check" >> /etc/haproxy/haproxy.cfg
+   server 474016-web-01 34.204.101.190:80 check
+   server 474016-web-02 100.25.197.195:80 check" >> /etc/haproxy/haproxy.cfg
 service haproxy start
