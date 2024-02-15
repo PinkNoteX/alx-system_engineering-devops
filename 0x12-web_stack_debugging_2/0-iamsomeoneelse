@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo whoami;
+# run as another user
+sudo -u '$1' whoami;
