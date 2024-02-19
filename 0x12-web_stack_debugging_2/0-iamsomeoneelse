@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # run as another user
-sudo -u '$1' whoami;
+if [ "$1" ]
+    then
+    sudo -u "$1" whoami
+fi
