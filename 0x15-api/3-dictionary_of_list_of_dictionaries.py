@@ -18,7 +18,7 @@ if __name__ == '__main__':
     for i in req:
         j_dict['task'] = i.get('title')
         j_dict['completed'] = i.get('completed')
-        j_dict['username'] = name.get('username')
+        j_dict['username'] = i.get(name.get('username'))
         j_list.append(j_dict)
         j_dict = {}
     j_dict_r = {}
