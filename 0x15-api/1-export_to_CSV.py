@@ -10,7 +10,7 @@ if __name__ == '__main__':
     TASK_TITLE = []
     u_id = sys.argv[1]
     name = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                       .format(u_id)).json()
+                        .format(u_id)).json()
     req = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
                        .format(u_id)).json()
     with open(u_id + '.csv', 'w', newline='') as cfile:
