@@ -6,10 +6,10 @@ import requests
 def top_ten(subreddit):
     """ return top 10 posts"""
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {"User-Agent": "alx_0x16_api_advanced"}
+    headers = {"User-Agent": "python:alx_0x16_api_advanced:v0.1"}
     lm = {"limit": 10}
-    rq = requests.get(url, headers=headers, params=lm, allow_redirects=False)
-    if rq.status_code == 404:
+    rq = requests.get(url, headers=headers, params=lm, allow_redirects=True)
+    if rq.status_code != 200:
         print("None")
         return
     else:
