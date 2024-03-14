@@ -5,6 +5,6 @@ exec {'hard-limit':
 }
 
 exec {'soft-limit':
-    command  => 'sed -i "/holberton hard/s/4/10000" /etc/security/limits.conf',
+    command  => 'sed -i "/holberton soft/s/4/10000" /etc/security/limits.conf',
     provider => shell,
 }
