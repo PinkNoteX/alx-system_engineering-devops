@@ -1,10 +1,9 @@
 # User limit
-exec {'hard-limit':
-    command  => 'sed -i "/holberton hard/s/5/10000" /etc/security/limits.conf',
-    provider => shell,
+exec { 'hard-limit':
+  command  => 'sudo sed -i \'s/nofile 5/nofile 30000/\' /etc/security/limits.conf',
+  provider => shell,
 }
-
-exec {'soft-limit':
-    command  => 'sed -i "/holberton soft/s/4/10000" /etc/security/limits.conf',
-    provider => shell,
+exec { 'soft-limit':
+  command  => 'sudo sed -i \'s/nofile 4/nofile 10000/\' /etc/security/limits.conf',
+  provider => shell,
 }
