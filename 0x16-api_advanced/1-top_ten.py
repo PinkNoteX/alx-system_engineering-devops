@@ -5,12 +5,12 @@ import requests
 
 def top_ten(subreddit):
     """ return top 10 posts"""
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {"User-Agent": "python:alx_0x16_api_advanced:v0.1"}
-    lm = {"limit": 10}
-    rq = requests.get(url, headers=headers, params=lm, allow_redirects=True)
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    headers = {"User-Agent": "reddit_user"}
+    params = {"limit": 10}
+    rq = requests.get(url, headers=headers, params=params, allow_redirects=True)
     if rq.status_code != 200:
-        print("None")
+        print(rq.status_code)
         return
     else:
         res = rq.json().get("data")
